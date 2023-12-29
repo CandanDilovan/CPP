@@ -6,7 +6,7 @@
 /*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:39:39 by dilovancand       #+#    #+#             */
-/*   Updated: 2023/12/29 11:58:20 by dilovancand      ###   ########.fr       */
+/*   Updated: 2023/12/29 14:49:57 by dilovancand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 	virtual void use(int idx, ICharacter& target);
 	static AMateria* ground[516];
 	
+	virtual void deleteground(void);
 	Character & operator=(Character const & rhs);
 };
 

@@ -6,7 +6,7 @@
 /*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 12:45:32 by dilovancand       #+#    #+#             */
-/*   Updated: 2023/12/29 12:06:28 by dilovancand      ###   ########.fr       */
+/*   Updated: 2023/12/29 15:42:49 by dilovancand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ void Character::equip(AMateria* m)
 
 	while (++a < 4)
 	{
-		if (this->_inventory[a] && a == 4)
+		if (this->_inventory[a] && a == 3)
+		{
 			std::cout << "inventory is full" << std::endl;
+			return ;
+		}
 		if (!this->_inventory[a])
 		{
 			this->_inventory[a] = m;
@@ -55,14 +58,14 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
-	int a = -1;
+	int a = 0;
 
-	if (this->_inventory[idx] &&  idx > 0 && idx < 4)
+	if (this->_inventory[idx] &&  idx >= 0 && idx < 4)
 	{
 		while (ground[a] != 0)
 			a++;
 		ground[a] = this->_inventory[idx];
-		this->_inventory[idx] = NULL;
+		this->_inventory[idx] = 0;
 	}
 	else
 		std::cout << "Nothing to unequip" << std::endl;
@@ -92,11 +95,31 @@ const std::string & Character::getName(void) const
 	return (this->_name);
 }
 
-Character::~Character(void)
+void Character::deleteground(void)
 {
-	for (int a = 0; a < 4; a++)
+	int a;
+	int b;
+
+	a = -1;
+	while(++a < 4)
 	{
-		if (_inventory[a])
-			delete _inventory[a];
+		b = -1;
+		while (ground[++b] != 0)
+		{
+
+			if (_inventory[a] == ground[b])
+				break ;
+			else if (ground[b + 1] == 0)
+			{
+				ground[b + 1] = _inventory[a]; 
+				_inventory[a] = 0;
+			}
+		}
 	}
+	b = -1;
+	while (ground[++b] != 0)
+		delete ground[b];
+}
+
+Character::~Character(void){
 }
