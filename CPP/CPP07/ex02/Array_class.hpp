@@ -6,7 +6,7 @@
 /*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:19:13 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/26 08:32:27 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/01/29 10:20:35 by dilovancand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ public :
 	};
 
 	T & operator[](int index){
-		if (index > size() || index < 0)
+		if (index >= size() || index < 0)
 			throw OutOfBound();
 		else
 			return (this->_list[index]);
@@ -77,6 +77,7 @@ public :
 	};
 
 	~Array<T>(void){
+		delete[] _list;
 	};
 	
 };

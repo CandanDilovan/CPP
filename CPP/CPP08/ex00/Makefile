@@ -6,7 +6,7 @@
 #    By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 14:50:10 by dilovancand       #+#    #+#              #
-#    Updated: 2024/01/29 10:19:26 by dilovancand      ###   ########.fr        #
+#    Updated: 2024/01/26 08:20:59 by dilovancand      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCES = main.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME}
 
