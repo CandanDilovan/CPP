@@ -6,7 +6,7 @@
 #    By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 14:50:10 by dilovancand       #+#    #+#              #
-#    Updated: 2024/02/01 14:26:34 by dcandan          ###   ########.fr        #
+#    Updated: 2024/02/01 15:47:06 by dcandan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCES = main.cpp BitcoinExchange.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: ${NAME}
 

@@ -6,7 +6,7 @@
 /*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:42:12 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/01 14:38:06 by dcandan          ###   ########.fr       */
+/*   Updated: 2024/02/01 15:48:14 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include <iostream>
 # include <cstdlib>
 
-void    make_map(std::map<std::string, double> &map);
+void    make_map(std::map<std::string, double> *map);
+void    read_input(const char* filename, std::map<std::string, double> &map);
 
 class NotOpen : public std::exception
 {
@@ -27,6 +28,15 @@ class NotOpen : public std::exception
         virtual const char *what() const throw()
         {
             return ("File cannot be opened");
+        }
+};
+
+class BadInput : public std::exception
+{
+    public :
+        virtual const char *what() const throw()
+        {
+            return ("bad input => ");
         }
 };
 
