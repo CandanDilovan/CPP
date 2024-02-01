@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter_class.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:06:42 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/23 13:41:20 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/02/01 12:28:12 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ int ScalarConverter::ItsInt(char *str)
 {
 	if (atoi(str) > INT_MAX || atoi(str) < INT_MIN)
 		throw OverInt();
-	for (int a = 0; a < strlen(str); a++)
+	for (size_t a = 0; a < strlen(str); a++)
 			if (str[a] < '0' || str[a] > '9')
 				return (1);
 	return (0);
@@ -150,9 +150,9 @@ int ScalarConverter::ItsFloat(char *str)
 	int flag;
 
 	flag = 0;
-	for (int a = 0; a < strlen(str); a++)
+	for (size_t a = 0; a < strlen(str); a++)
 	{
-		if (str[a] >= '0' && str[a] <= '9' || str[a] == '.' || str[a] == 'f')
+		if ((str[a] >= '0' && str[a] <= '9') || str[a] == '.' || str[a] == 'f')
 		{
 			if (str[a] == '.')
 				flag++;
@@ -170,9 +170,9 @@ int ScalarConverter::ItsDouble(char *str)
 	int flag;
 
 	flag = 0;
-	for (int a = 0; a < strlen(str); a++)
+	for (size_t a = 0; a < strlen(str); a++)
 	{
-		if (str[a] >= '0' && str[a] <= '9' || str[a] == '.')
+		if ((str[a] >= '0' && str[a] <= '9') || str[a] == '.')
 		{
 			if (str[a] == '.')
 				flag++;
@@ -187,7 +187,7 @@ int ScalarConverter::ItsDouble(char *str)
 
 int ScalarConverter::ItsChar(char *str)
 {
-	for (int a = 0; a < strlen(str); a++)
+	for (size_t a = 0; a < strlen(str); a++)
 		if (str[a] >= '!' && str[a] <= '~')
 			if (a > 1)
 				return (1);
@@ -201,17 +201,17 @@ void ScalarConverter::convert(char *str)
 			return (ShowOther(str));
 		else if (ItsInt(str) == 0)
 		{
-			int a = std::stoi(str, nullptr);
+			int a = std::atoi(str);
 			return (ShowInt(a));
 		}
 		else if (ItsFloat(str) == 0)
 		{
-			float a = std::stof(str, nullptr);
+			float a = std::atof(str);
 			return (ShowFloat(a));
 		}
 		else if (ItsDouble(str) == 0)
 		{	
-			double a = std::stod(str, nullptr);
+			double a = std::atof(str);
 			return (ShowDouble(a));
 		}
 		else if (ItsChar(str) == 0)

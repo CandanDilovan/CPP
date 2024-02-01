@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 14:17:08 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/30 11:31:56 by dcandan          ###   ########.fr       */
+/*   Created: 2024/02/01 13:42:12 by dcandan           #+#    #+#             */
+/*   Updated: 2024/02/01 14:38:06 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base_class.hpp"
-#include "A_class.hpp"
-#include "B_class.hpp"
-#include "C_class.hpp"
+#ifndef BITCOINEXCHANGE_HPP
+# define BITCOINEXCHANGE_HPP
 
-int main(void)
+# include <map>
+# include <fstream>
+# include <string>
+# include <iostream>
+# include <cstdlib>
+
+void    make_map(std::map<std::string, double> &map);
+
+class NotOpen : public std::exception
 {
-	Base *truc;
-	Base bidule;
-	
-	truc = bidule.generate();
-	bidule.identify(truc);
-	delete truc;
-}
+    public :
+        virtual const char *what() const throw()
+        {
+            return ("File cannot be opened");
+        }
+};
+
+#endif

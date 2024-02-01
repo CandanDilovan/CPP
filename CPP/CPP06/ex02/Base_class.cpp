@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base_class.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:25:22 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/24 15:10:16 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/01/30 11:30:04 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,30 @@ void Base::identify(Base *p)
 		std::cout << "C" << std::endl;
 }
 
+Base::~Base(void){
+}
+
 void Base::identify(Base &p)
 {
 	try{
-		dynamic_cast<A_class &>(p);
+		A_class A = dynamic_cast<A_class &>(p);
+		(void)A;
 		std::cout << "A" << std::endl;
 	}
-	catch (std::bad_cast &e){
+	catch (std::exception &e){
 	}
 	try{
-		dynamic_cast<B_class &>(p);
+		B_class B = dynamic_cast<B_class &>(p);
+		(void)B;
 		std::cout << "B" << std::endl;
 	}
-	catch (std::bad_cast &e){
+	catch (std::exception &e){
 	}
 	try{
-		dynamic_cast<C_class &>(p);
+		C_class C = dynamic_cast<C_class &>(p);
+		(void)C;
 		std::cout << "C" << std::endl;
 	}
-	catch (std::bad_cast &e){
+	catch (std::exception &e){
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter_class.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:06:42 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/23 13:32:09 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/02/01 12:28:46 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # include <fstream>
 # include <sstream>
 # include <cmath>
+# include <stdlib.h>
+# include <cstring>
+# include <limits.h>
 
 class ScalarConverter 
 {

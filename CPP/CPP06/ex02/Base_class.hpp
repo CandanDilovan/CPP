@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base_class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 13:19:52 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/24 14:42:28 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/01/30 11:29:03 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <fstream>
 # include <sstream>
 # include <cmath>
+# include <stdlib.h>
+# include <time.h>
 
 class Base
 {

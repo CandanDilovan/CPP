@@ -6,12 +6,12 @@
 #    By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 14:50:10 by dilovancand       #+#    #+#              #
-#    Updated: 2024/01/29 12:35:55 by dcandan          ###   ########.fr        #
+#    Updated: 2024/01/29 14:58:30 by dcandan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
-SOURCES = main.cpp
+SOURCES = main.cpp Span_class.cpp
 			
 OBJECTS = $(SOURCES:.cpp=.o)
 

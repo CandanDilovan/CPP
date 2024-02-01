@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array_class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 16:19:13 by dilovancand       #+#    #+#             */
-/*   Updated: 2024/01/29 10:20:35 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/01/29 10:31:56 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@
 # include <fstream>
 # include <sstream>
 # include <cmath>
-# include <exception>
-# include <thread>
-# include <chrono>
+# include <exception> 
 
 template<typename T>
 class Array
