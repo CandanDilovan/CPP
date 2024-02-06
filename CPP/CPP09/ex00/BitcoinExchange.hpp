@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:42:12 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/01 15:48:14 by dcandan          ###   ########.fr       */
+/*   Updated: 2024/02/06 15:40:10 by dilovancand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,25 @@ class NotOpen : public std::exception
     public :
         virtual const char *what() const throw()
         {
-            return ("File cannot be opened");
+            return ("File cannot be opened.");
+        }
+};
+
+class NegativeNumber : public std::exception
+{
+    public :
+        virtual const char *what() const throw()
+        {
+            return ("Not a positive number.");
+        }
+};
+
+class IntOverflow : public std::exception
+{
+    public :
+        virtual const char *what() const throw()
+        {
+            return ("Too large a number.");
         }
 };
 

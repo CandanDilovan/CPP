@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:50:29 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/01 15:48:09 by dcandan          ###   ########.fr       */
+/*   Updated: 2024/02/06 15:43:07 by dilovancand      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,11 @@
 int main(int argc, char **argv)
 {
     if (argc != 2)
-        return (-1);
+        return (std::cout << "Error: Could not open file.\n", 0);
     try
     {
         std::map<std::string, double>    map;
         make_map(&map);
-        std::map<std::string, double>::iterator it = map.begin();
-        std::map<std::string, double>::iterator ite = map.end();
-        while(it != ite)
-        {
-            std::cout << it->first << " - ";
-            std::cout << it->second << std::endl;
-            it++;
-        }
         read_input(argv[1], map);
     }
     catch (std::exception &e)
