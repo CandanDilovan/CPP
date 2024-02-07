@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:42:12 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/06 15:40:10 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/02/07 10:58:54 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string>
 # include <iostream>
 # include <cstdlib>
+# include <limits.h>
 
 void    make_map(std::map<std::string, double> *map);
 void    read_input(const char* filename, std::map<std::string, double> &map);
