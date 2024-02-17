@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dilovancandan <dilovancandan@student.42    +#+  +:+       +#+        */
+/*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 13:44:51 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/06 15:43:58 by dilovancand      ###   ########.fr       */
+/*   Updated: 2024/02/13 13:01:58 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ std::string find_closest(std::map<std::string, double> &map, std::string str)
 		}
 		it++;
 	}
-	return (0);
+	return (key);
 }
 
 void check_input(std::string str)
