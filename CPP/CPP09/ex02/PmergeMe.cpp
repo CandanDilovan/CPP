@@ -6,7 +6,7 @@
 /*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:39:15 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/19 14:59:59 by dcandan          ###   ########.fr       */
+/*   Updated: 2024/02/20 11:49:23 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void printit(std::deque<int> &cont)
     {
         std::cout << *it << " ";
     }
-    std::cout << std::endl;
 }
 
 
@@ -45,7 +44,7 @@ int ItsInt(std::string str)
 }
 
 
-void splitting(char **list, std::deque<int> &cont)
+void splitting(char **list, int argc, std::deque<int> &cont)
 {
     std::clock_t start;
     std::clock_t end;
@@ -85,8 +84,14 @@ void splitting(char **list, std::deque<int> &cont)
         cont.push_back(std::atoi(list[a]));
     }
     recursiondeque(cont);
+    std::cout << "Before: " << std::endl << "[ ";
+    for (int b = 1; list[b]; b++)
+        std::cout << list[b] << " ";
+    std::cout << "]" << std::endl << "After: " << std::endl << "[ ";
+    printit(cont);
+    std::cout << "]" << std::endl;
     end = clock();
-    std::cout << "deque time : " << std::fixed << static_cast<double>(((end - start) * CLOCKS_PER_SEC) / 1000000) << " us" << std::endl;
+    std::cout << "Time to process a range of "<< argc - 1 << " elements with std::deque: " << static_cast<double>(((end - start) * CLOCKS_PER_SEC) / 1000000) << " us" << std::endl;
 }
 
 void recursiondeque(std::deque<int> &cont)
@@ -95,7 +100,7 @@ void recursiondeque(std::deque<int> &cont)
     
     if (cont.size() <= 1)
         return ;
-    for (unsigned int a = 1; a < cont.size(); a += 2)
+    for (unsigned int a = 1; a - 1 < cont.size(); a += 2)
     {
         if (cont[a] < cont[a - 1])
             std::swap(cont[a], cont[a - 1]);
@@ -130,7 +135,7 @@ void binarysearch(std::deque<int> &cont, int insert)
 }
 
 
-void splittingvector(char **list, std::vector<int> &cont)
+void splittingvector(char **list, int argc, std::vector<int> &cont)
 {
     std::clock_t start;
     std::clock_t end;
@@ -171,7 +176,7 @@ void splittingvector(char **list, std::vector<int> &cont)
     }
     recursionvector(cont);
     end = clock();
-    std::cout << "vector time : " << std::fixed << static_cast<double>(((end - start) * CLOCKS_PER_SEC) / 1000000) << " us" << std::endl;
+    std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector: " << static_cast<double>(((end - start) * CLOCKS_PER_SEC) / 1000000) << " us" << std::endl;
 }
 
 void recursionvector(std::vector<int> &cont)
@@ -180,7 +185,7 @@ void recursionvector(std::vector<int> &cont)
     
     if (cont.size() <= 1)
         return ;
-    for (unsigned int a = 1; a < cont.size(); a += 2)
+    for (unsigned int a = 1; a - 1 < cont.size(); a += 2)
     {
         if (cont[a] < cont[a - 1])
             std::swap(cont[a], cont[a - 1]);
@@ -201,6 +206,16 @@ void binarysearchvector(std::vector<int> &cont, int insert)
 
     while (1)
     {
+        if (cont[cont.size() - 1] < insert)
+        {
+            cont.insert(cont.end(), insert);
+            break;
+        }
+        if (cont[0] > insert)
+        {
+            cont.insert(cont.begin(), insert);
+            break;
+        }
         mid = (begin + (end - begin) / 2);
         if (cont[mid] <= insert)
             begin = mid + 1;

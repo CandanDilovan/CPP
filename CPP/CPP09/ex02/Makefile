@@ -6,7 +6,7 @@
 #    By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/28 14:50:10 by dilovancand       #+#    #+#              #
-#    Updated: 2024/02/13 12:38:54 by dcandan          ###   ########.fr        #
+#    Updated: 2024/02/20 11:32:24 by dcandan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SOURCES = main.cpp PmergeMe.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -g3
 
 all: ${NAME}
 

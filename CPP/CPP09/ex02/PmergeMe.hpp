@@ -6,7 +6,7 @@
 /*   By: dcandan <dcandan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 12:39:38 by dcandan           #+#    #+#             */
-/*   Updated: 2024/02/19 14:52:33 by dcandan          ###   ########.fr       */
+/*   Updated: 2024/02/20 11:43:17 by dcandan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@
 # include <ctime>
 # include <algorithm>
 
-void splitting(char **list, std::deque<int> &cont);
+void splitting(char **list, int argc,std::deque<int> &cont);
 void recursiondeque(std::deque<int> &cont);
 void binarysearch(std::deque<int> &cont, int insert);
 
 
 void binarysearchvector(std::vector<int> &cont, int insert);
 void recursionvector(std::vector<int> &cont);
-void splittingvector(char **list, std::vector<int> &cont);
+void splittingvector(char **list, int argc, std::vector<int> &cont);
 
 
 void printit(std::deque<int> &cont);
